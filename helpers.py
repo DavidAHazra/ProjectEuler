@@ -34,11 +34,7 @@ def get_n_fibonacci(n):
 
 
 def is_prime(n):
-    """
-    Assumes that n is a positive natural number
-    """
-    # We know 1 is not a prime number
-    if n == 1:
+    if n <= 1:
         return False
 
     i = 2
@@ -143,7 +139,10 @@ def get_divisor_count(n):
 
 
 def is_palindrome(n):
-    return str(n)[::-1] == str(n)
+    if type(n) == str:
+        return n[::-1] == n
+    else:
+        return str(n)[::-1] == str(n)
 
 
 def prod(iterable):
